@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:trusty
 MAINTAINER Christoph Dwertmann <christoph.dwertmann@vaultsystems.com.au>
 
 ENV DEBIAN_FRONTEND noninteractive
