@@ -2,7 +2,9 @@ FROM ubuntu:trusty
 MAINTAINER Christoph Dwertmann <christoph.dwertmann@vaultsystems.com.au>
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN echo "deb http://ubuntu-cloud.archive.canonical.com/ubuntu trusty-updates/kilo main" > /etc/apt/sources.list.d/cloudarchive-kilo.list && \
+RUN apt-get update && \
+    apt-get install -y ubuntu-cloud-keyring && \
+    echo "deb http://ubuntu-cloud.archive.canonical.com/ubuntu trusty-updates/kilo main" > /etc/apt/sources.list.d/cloudarchive-kilo.list && \
     apt-get update && \
     apt-get install -y keystone python-mysqldb ubuntu-cloud-keyring && \
     apt-get clean && \
